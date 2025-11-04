@@ -57,3 +57,9 @@ for ($i = 0; $i < count($beli); $i++) {
 
 echo "</table><br>";
 ?>
+
+<?php
+// Tampilkan total harga
+echo "===================<br>";
+echo "<strong>Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.') . "</strong><br>";
+?>
