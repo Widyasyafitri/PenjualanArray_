@@ -14,3 +14,19 @@ $produk = [
 echo "<h2><b>--POLGAN MART--</b></h2>";
 echo "Daftar Pembelian<br><br>";
 ?>
+
+<?php
+// Inisialisasi variabel
+$beli = [];
+$jumlah = [];
+
+// Acak jumlah pembelian
+for ($i = 0; $i < 5; $i++) {
+    $randomProductIndex = rand(0, count($produk) - 1);
+    $randomQuantity = rand(1, 10);
+    
+    $beli[] = $produk[$randomProductIndex]['kode'];
+    $jumlah[] = $randomQuantity;
+}
+?>
+
