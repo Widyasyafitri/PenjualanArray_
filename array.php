@@ -30,3 +30,30 @@ for ($i = 0; $i < 5; $i++) {
 }
 ?>
 
+<?php
+// Inisialisasi total belanja
+$grandtotal = 0; 
+
+// Tampilkan daftar pembelian
+echo "<table border='1' cellpadding='5' cellspacing='0'>";
+echo "<tr><th>Nama Barang</th><th>Harga</th><th>Jumlah Beli</th><th>Total Harga</th></tr>";
+
+for ($i = 0; $i < count($beli); $i++) {
+    $productIndex = array_search($beli[$i], array_column($produk, 'kode'));
+    $productName = $produk[$productIndex]['nama'];
+    $productPrice = $produk[$productIndex]['harga'];
+    $quantity = $jumlah[$i];
+    
+    $totalPrice = $productPrice * $quantity;
+    $grandtotal += $totalPrice;
+    
+    echo "<tr>";
+    echo "<td>{$productName}</td>";
+    echo "<td>Rp " . number_format($productPrice, 0, ',', '.') . "</td>";
+    echo "<td>{$quantity}</td>";
+    echo "<td>Rp " . number_format($totalPrice, 0, ',', '.') . "</td>";
+    echo "</tr>";
+}
+
+echo "</table><br>";
+?>
