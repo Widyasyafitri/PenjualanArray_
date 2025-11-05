@@ -1,6 +1,7 @@
 <?php
 // penjualanArray.php
 // menambahkan code barang
+// menambahkan diskon
 
 // Daftar Produk
 $produk = [
@@ -68,7 +69,24 @@ echo "</table><br>";
 ?>
 
 <?php
-// Tampilkan total harga
+// ==============================
+// Menambahkan Diskon Otomatis
+// ==============================
+$diskonPersen = 0;
+
+if ($grandtotal <= 50000) {
+    $diskonPersen = 5;
+} elseif ($grandtotal > 50000 && $grandtotal <= 100000) {
+    $diskonPersen = 10;
+} else {
+    $diskonPersen = 20;
+}
+
+// Hitung nilai diskon
+$nilaiDiskon = ($grandtotal * $diskonPersen) / 100;
+
+// Tampilkan total harga dan diskon
 echo "===================<br>";
 echo "<strong>Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.') . "</strong><br>";
+echo "<strong>Diskon: Rp " . number_format($nilaiDiskon, 0, ',', '.') . " ({$diskonPersen}%)</strong><br>";
 ?>
