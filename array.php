@@ -2,9 +2,13 @@
 // penjualanArray.php
 // menambahkan code barang
 <<<<<<< HEAD
+<<<<<<< HEAD
 // menambahkan diskon
 =======
 >>>>>>> 1ef4d6d (Commit 6 - Menambahkan Diskon)
+=======
+// menambahkan diskon
+>>>>>>> ea9fac6 (Commit 7 - Menambahkan Total Pembayaran)
 
 // Daftar Produk
 $produk = [
@@ -73,9 +77,16 @@ echo "</table><br>";
 
 <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
 // ==============================
 // Menambahkan Diskon Otomatis
 // ==============================
+=======
+// ==============================
+// Menambahkan Diskon Otomatis
+// ==============================
+
+>>>>>>> ea9fac6 (Commit 7 - Menambahkan Total Pembayaran)
 $diskonPersen = 0;
 
 if ($grandtotal <= 50000) {
@@ -86,6 +97,7 @@ if ($grandtotal <= 50000) {
     $diskonPersen = 20;
 }
 
+<<<<<<< HEAD
 // Hitung nilai diskon
 $nilaiDiskon = ($grandtotal * $diskonPersen) / 100;
 
@@ -98,4 +110,15 @@ echo "<strong>Diskon: Rp " . number_format($nilaiDiskon, 0, ',', '.') . " ({$dis
 echo "===================<br>";
 echo "<strong>Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.') . "</strong><br>";
 >>>>>>> 1ef4d6d (Commit 6 - Menambahkan Diskon)
+=======
+// Hitung nilai diskon dan total bayar akhir
+$nilaiDiskon = ($grandtotal * $diskonPersen) / 100;
+$totalBayar = $grandtotal - $nilaiDiskon;
+
+// Tampilkan total harga dan diskon
+echo "===================<br>";
+echo "<strong>Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.') . "</strong><br>";
+echo "<strong>Diskon: Rp " . number_format($nilaiDiskon, 0, ',', '.') . " ({$diskonPersen}%)</strong><br>";
+echo "<strong>Total Bayar Setelah Diskon: Rp " . number_format($totalBayar, 0, ',', '.') . "</strong><br>";
+>>>>>>> ea9fac6 (Commit 7 - Menambahkan Total Pembayaran)
 ?>
