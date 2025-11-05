@@ -1,7 +1,10 @@
 <?php
 // penjualanArray.php
 // menambahkan code barang
+<<<<<<< HEAD
 // menambahkan diskon
+=======
+>>>>>>> 1ef4d6d (Commit 6 - Menambahkan Diskon)
 
 // Daftar Produk
 $produk = [
@@ -69,6 +72,7 @@ echo "</table><br>";
 ?>
 
 <?php
+<<<<<<< HEAD
 // ==============================
 // Menambahkan Diskon Otomatis
 // ==============================
@@ -89,4 +93,9 @@ $nilaiDiskon = ($grandtotal * $diskonPersen) / 100;
 echo "===================<br>";
 echo "<strong>Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.') . "</strong><br>";
 echo "<strong>Diskon: Rp " . number_format($nilaiDiskon, 0, ',', '.') . " ({$diskonPersen}%)</strong><br>";
+=======
+// Tampilkan total harga
+echo "===================<br>";
+echo "<strong>Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.') . "</strong><br>";
+>>>>>>> 1ef4d6d (Commit 6 - Menambahkan Diskon)
 ?>
