@@ -1,5 +1,6 @@
 <?php
 // penjualanArray.php
+// menambahkan code barang
 
 // Daftar Produk
 $produk = [
@@ -10,7 +11,7 @@ $produk = [
     ["kode" => "P005", "nama" => "Aqua", "harga" => 5000],
 ];
 
-// Cetak header (tebal dan besar)                                                                                                                                                                       
+// Cetak header
 echo "<h2><b>--POLGAN MART--</b></h2>";
 echo "Daftar Pembelian<br><br>";
 ?>
@@ -36,10 +37,17 @@ $grandtotal = 0;
 
 // Tampilkan daftar pembelian
 echo "<table border='1' cellpadding='5' cellspacing='0'>";
-echo "<tr><th>Nama Barang</th><th>Harga</th><th>Jumlah Beli</th><th>Total Harga</th></tr>";
+echo "<tr>
+        <th>Kode Barang</th>
+        <th>Nama Barang</th>
+        <th>Harga</th>
+        <th>Jumlah Beli</th>
+        <th>Total Harga</th>
+      </tr>";
 
 for ($i = 0; $i < count($beli); $i++) {
     $productIndex = array_search($beli[$i], array_column($produk, 'kode'));
+    $productCode = $produk[$productIndex]['kode'];
     $productName = $produk[$productIndex]['nama'];
     $productPrice = $produk[$productIndex]['harga'];
     $quantity = $jumlah[$i];
@@ -48,6 +56,7 @@ for ($i = 0; $i < count($beli); $i++) {
     $grandtotal += $totalPrice;
     
     echo "<tr>";
+    echo "<td>{$productCode}</td>";
     echo "<td>{$productName}</td>";
     echo "<td>Rp " . number_format($productPrice, 0, ',', '.') . "</td>";
     echo "<td>{$quantity}</td>";
