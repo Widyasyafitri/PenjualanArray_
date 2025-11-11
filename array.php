@@ -1,14 +1,6 @@
 <?php
 // penjualanArray.php
-// menambahkan code barang
-<<<<<<< HEAD
-<<<<<<< HEAD
-// menambahkan diskon
-=======
->>>>>>> 1ef4d6d (Commit 6 - Menambahkan Diskon)
-=======
-// menambahkan diskon
->>>>>>> ea9fac6 (Commit 7 - Menambahkan Total Pembayaran)
+// menambahkan code barang dan diskon otomatis
 
 // Daftar Produk
 $produk = [
@@ -22,9 +14,7 @@ $produk = [
 // Cetak header
 echo "<h2><b>--POLGAN MART--</b></h2>";
 echo "Daftar Pembelian<br><br>";
-?>
 
-<?php
 // Inisialisasi variabel
 $beli = [];
 $jumlah = [];
@@ -37,9 +27,7 @@ for ($i = 0; $i < 5; $i++) {
     $beli[] = $produk[$randomProductIndex]['kode'];
     $jumlah[] = $randomQuantity;
 }
-?>
 
-<?php
 // Inisialisasi total belanja
 $grandtotal = 0; 
 
@@ -73,20 +61,11 @@ for ($i = 0; $i < count($beli); $i++) {
 }
 
 echo "</table><br>";
-?>
 
-<?php
-<<<<<<< HEAD
-<<<<<<< HEAD
-// ==============================
-// Menambahkan Diskon Otomatis
-// ==============================
-=======
 // ==============================
 // Menambahkan Diskon Otomatis
 // ==============================
 
->>>>>>> ea9fac6 (Commit 7 - Menambahkan Total Pembayaran)
 $diskonPersen = 0;
 
 if ($grandtotal <= 50000) {
@@ -97,20 +76,6 @@ if ($grandtotal <= 50000) {
     $diskonPersen = 20;
 }
 
-<<<<<<< HEAD
-// Hitung nilai diskon
-$nilaiDiskon = ($grandtotal * $diskonPersen) / 100;
-
-// Tampilkan total harga dan diskon
-echo "===================<br>";
-echo "<strong>Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.') . "</strong><br>";
-echo "<strong>Diskon: Rp " . number_format($nilaiDiskon, 0, ',', '.') . " ({$diskonPersen}%)</strong><br>";
-=======
-// Tampilkan total harga
-echo "===================<br>";
-echo "<strong>Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.') . "</strong><br>";
->>>>>>> 1ef4d6d (Commit 6 - Menambahkan Diskon)
-=======
 // Hitung nilai diskon dan total bayar akhir
 $nilaiDiskon = ($grandtotal * $diskonPersen) / 100;
 $totalBayar = $grandtotal - $nilaiDiskon;
@@ -120,5 +85,4 @@ echo "===================<br>";
 echo "<strong>Total Belanja: Rp " . number_format($grandtotal, 0, ',', '.') . "</strong><br>";
 echo "<strong>Diskon: Rp " . number_format($nilaiDiskon, 0, ',', '.') . " ({$diskonPersen}%)</strong><br>";
 echo "<strong>Total Bayar Setelah Diskon: Rp " . number_format($totalBayar, 0, ',', '.') . "</strong><br>";
->>>>>>> ea9fac6 (Commit 7 - Menambahkan Total Pembayaran)
 ?>
